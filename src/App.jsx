@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import { ProductProvider } from './context/ProductContext';
 import { CartProvider } from './context/CartContext';
-// import Checkout from './pages/Checkout';
+import Checkout from './pages/Checkout';
 // import OrderConfirmation from './pages/OrderConfirmation';
 import ProductDetails from './pages/ProductDetails';
 import Header from "./components/Header";
@@ -25,6 +25,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/product/:id' element={<ProductDetails />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<Checkout />} />
             </Routes>
             <Footer />
           </Router>

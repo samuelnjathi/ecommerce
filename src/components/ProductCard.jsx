@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { CartContext } from "../context/CartContext";
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 function ProductCard({product}) {
     const { addToCart } = useContext(CartContext)
@@ -20,8 +22,20 @@ function ProductCard({product}) {
                             <button className="hover:text-black border hover:bg-white border-gray-500 bg-black  text-white w-full h-[3rem] rounded-3xl items-center mb-3 cursor-pointer">View Details</button>
                         </Link>
                     </div>
-                    <FavoriteBorderOutlinedIcon className="gap-2 hover:bg-gray-100" />
-                        <ShoppingCartOutlinedIcon onClick={() => addToCart(product)} />
+                    <Tooltip title="Add to Wishlist">
+                        <IconButton color="inherit">
+                             <FavoriteBorderOutlinedIcon/>
+                        </IconButton>
+
+                    </Tooltip>
+                    
+                    <Tooltip title="Add to Cart" >
+                        <IconButton color="inherit">
+                            <ShoppingCartOutlinedIcon onClick={() => addToCart(product)} /> 
+                        </IconButton>
+                         
+                    </Tooltip>
+                        
                     <div>
                         
                     </div>

@@ -1,14 +1,20 @@
 import React from 'react';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import ProductDetails from './pages/ProductDetails';
+
 import { ProductProvider } from './context/ProductContext';
 import { CartProvider } from './context/CartContext';
-import Checkout from './pages/Checkout';
+import { AuthProvider } from './context/AuthContext';
+
 import Login from './pages/Admin/Login';
-// import OrderConfirmation from './pages/OrderConfirmation';
-import ProductDetails from './pages/ProductDetails';
-import Header from "./components/Header";
-import Footer from './components/Footer'; 
+import AdminDashboard from './pages/Admin/AdminDashboard';
+
+import PublicLayout from './Layouts/PublicLayout';
+import AdminLayout from './Layouts/AdminLayout';
+
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -19,18 +25,21 @@ function App() {
     <>
       <ProductProvider>
         <CartProvider>
-          <ToastContainer position="top-right" autoClose={2000}/>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/product/:id' element={<ProductDetails />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<Checkout />} />
-              <Route path='/login' element={<Login />} />
-            </Routes>
-            <Footer />
-          </Router>
+          <AuthProvider>
+            <ToastContainer position="top-right" autoClose={2000}/>
+            <Router>
+              <Routes>
+                <Route path='/' element={<PublicLayout><Home /></PublicLayout>} />
+                <Route path='/product/:id' element={<PublicLayout><ProductDetails /></PublicLayout> } />
+                <Route path='/cart' element={<PublicLayout><Cart /></PublicLayout>} />
+                <Route path='/checkout' element={<PublicLayout><Checkout /></PublicLayout>} />
+                
+                <Route path='/login' element={<Login />} />
+
+                <Route path='/admin/dashboard' element={<AdminLayout><AdminDashboard /></AdminLayout>} />
+              </Routes>
+            </Router>
+          </AuthProvider>
         </CartProvider>
       </ProductProvider>
     </>

@@ -28,8 +28,8 @@ function ProductCard({product}) {
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Add to Cart" >
-                        <IconButton color="inherit">
-                            <ShoppingCartOutlinedIcon onClick={() => addToCart(product)} /> 
+                        <IconButton color="inherit" onClick={() => addToCart(product)}>
+                            <ShoppingCartOutlinedIcon /> 
                         </IconButton>
                     </Tooltip>
                         

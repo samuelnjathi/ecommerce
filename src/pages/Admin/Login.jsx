@@ -5,7 +5,8 @@ import login from "../../assets/images/login.jpg";
 export default function Login(){
     return(
         <>
-        <div className="flex gap-10 mx-[5%] bg-gray-100 rounded-2xl h-[80vh]">
+
+        <div className="flex gap-10 m-[5%] bg-gray-100 rounded-2xl h-[80vh]">
             <div className="flex m-5 w-full">
                 <img className="w-full rounded-2xl" src={login} alt="login image" />
             </div>

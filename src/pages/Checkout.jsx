@@ -4,11 +4,13 @@ import CheckoutForm from "../components/CheckoutForm";
 export default function Checkout() {
     return (
         <>
-            <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 mx-[4%]">
-                <div className="my-5">
+            <div className="grid lg:grid-cols-2 sm:grid-cols-1 sm:w-auto gap-10 mx-[4%] ">
+                <div className="my-5 border  border-gray-400 rounded-lg">
                     <CheckoutForm />
                 </div>
-                <div className="my-5"></div>
+                <div className="my-5 border  border-gray-400 rounded-lg">
+                    <h3>Review your cart</h3>
+                </div>
             </div>
         </>
     )

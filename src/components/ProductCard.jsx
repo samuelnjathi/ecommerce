@@ -26,14 +26,11 @@ function ProductCard({product}) {
                         <IconButton color="inherit">
                              <FavoriteBorderOutlinedIcon/>
                         </IconButton>
-
                     </Tooltip>
-                    
                     <Tooltip title="Add to Cart" >
                         <IconButton color="inherit">
                             <ShoppingCartOutlinedIcon onClick={() => addToCart(product)} /> 
                         </IconButton>
-                         
                     </Tooltip>
                         
                     <div>

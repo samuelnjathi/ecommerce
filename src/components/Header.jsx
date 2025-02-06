@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -26,7 +25,7 @@ function Header() {
                     </Tooltip>
                     <Link to="/cart" className="relative">
                             <Tooltip title="My Cart">
-                                <IconButton color="inherit" className="hover:bg-red-400" >
+                                <IconButton color="inherit">
                                     <ShoppingCartOutlinedIcon />
                                 </IconButton>
                             </Tooltip>
@@ -37,24 +36,13 @@ function Header() {
                             <FavoriteBorderOutlinedIcon />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="Login/Sign Up">
-                        <IconButton color="inherit">
-                            <PersonOutlineOutlinedIcon />
-                        </IconButton>
-                    </Tooltip>
-                    {/* <Tooltip title="Add to cart">
-                        <IconButton color="inherit">
-                            <ShoppingCartOutlinedIcon />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip title="Add to cart">
-                        <IconButton color="inherit">
-                            <ShoppingCartOutlinedIcon />
-                        </IconButton>
-                    </Tooltip>
-                     */}
-                    
-                    
+                    <Link to="login">
+                        <Tooltip title="Login/Sign Up">
+                            <IconButton color="inherit">
+                                <PersonOutlineOutlinedIcon />
+                            </IconButton>
+                        </Tooltip>
+                    </Link>   
                 </div>
             </header>
             

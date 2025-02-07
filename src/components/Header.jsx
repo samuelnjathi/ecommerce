@@ -36,7 +36,7 @@ function Header() {
                             <FavoriteBorderOutlinedIcon />
                         </IconButton>
                     </Tooltip>
-                    <Link to="login">
+                    <Link to="auth">
                         <Tooltip title="Login/Sign Up">
                             <IconButton color="inherit">
                                 <PersonOutlineOutlinedIcon />

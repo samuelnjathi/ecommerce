@@ -13,9 +13,9 @@ export default function Sidebar() {
                 </div>
                 
                 <div className="flex flex-col text-gray-500 font-medium">
-                    <Link className="mb-3"><DashboardOutlinedIcon className="mr-1"/> Dashboard</Link>
-                    <Link className="mb-3"><CategoryOutlinedIcon className="mr-1"/> Products</Link>
-                    <Link className="mb-3"><InventoryOutlinedIcon className="mr-1"/> Orders</Link>
+                    <Link to="/admin/dashboard" className="mb-3"><DashboardOutlinedIcon className="mr-1"/> Dashboard</Link>
+                    <Link to="/admin/products" className="mb-3"><CategoryOutlinedIcon className="mr-1"/> Products</Link>
+                    <Link to="/admin/orders" className="mb-3"><InventoryOutlinedIcon className="mr-1"/> Orders</Link>
                 </div>
             </div>
         </>

@@ -9,6 +9,8 @@ import { CartProvider } from './context/CartContext';
 
 import Auth from './pages/Admin/Auth';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import Products from './pages/Admin/Products';
+import Orders from './pages/Admin/Orders';
 
 import PublicLayout from './Layouts/PublicLayout';
 import AdminLayout from './Layouts/AdminLayout';
@@ -35,9 +37,11 @@ function App() {
                 <Route path='/cart' element={<PublicLayout><Cart /></PublicLayout>} />
                 <Route path='/checkout' element={<PublicLayout><Checkout /></PublicLayout>} />
                 
-                <Route path='/auth' element={<Auth />} />
+                <Route path='/admin/auth' element={<Auth />} />
 
                 <Route path='/admin/dashboard' element={<PrivateRoute><AdminLayout><AdminDashboard /></AdminLayout></PrivateRoute>} />
+                <Route path='/admin/products' element={<PrivateRoute><AdminLayout><Products /></AdminLayout></PrivateRoute>} />
+                <Route path='/admin/orders' element={<PrivateRoute><AdminLayout><Orders /></AdminLayout></PrivateRoute>} />
               </Routes>
             </BrowserRouter>
             

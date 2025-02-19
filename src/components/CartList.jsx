@@ -18,7 +18,6 @@ export default function CartList() {
                 {cartProducts.map((cart) => <CartItem key={cart.id} cart={cart} />)}
             </>
             )}
-            
         </>
     )
 }

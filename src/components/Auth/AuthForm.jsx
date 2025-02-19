@@ -51,7 +51,7 @@ export default function AuthForm() {
         <>
             <h1 className="text-2xl text-center font-semibold">{isRegistered ? "Register Here" : "Login Here"}</h1>
             <div className="flex flex-col">
-            <button onClick={handleGoogleSignIn} className="bg-red-500 border cursor-pointer text-white my-5 rounded-3xl h-9 hover:bg-red-400"><GoogleIcon className="mr-2"/>Sign in with google</button>
+            <button onClick={handleGoogleSignIn} className="bg-red-500 border cursor-pointer text-white my-5 rounded-3xl h-9 hover:bg-red-600"><GoogleIcon className="mr-2"/>Sign in with google</button>
             <h1 className="text-center font-semibold">OR</h1>
                 <label className="text-md font-medium mb-1 mt-3" htmlFor="email">Email Address</label>
                 <input onChange={(e) => setEmail(e.target.value)}
@@ -68,7 +68,9 @@ export default function AuthForm() {
                     placeholder="Enter Password" 
                     required/>
                 <Link onClick={() => setIsRegistered(!isRegistered)} className="text-blue-500 underline my-1">{isRegistered ? "Already have an account? Login" :" Don't have an account? Register"}</Link>
-                <button onClick={handleSubmit} className="bg-black border cursor-pointer text-white mt-2 rounded-3xl h-9 hover:bg-white hover:text-black">{isRegistered ? "Sign Up" : "Login" }</button>
+                <button onClick={handleSubmit} className="bg-blue-500 border cursor-pointer text-white mt-2 rounded-3xl h-9 hover:bg-blue-600">
+                    {loading ? "Authenticating...": isRegistered ? "Sign Up" : "Login" }
+                    </button>
                
             </div> 
         </>

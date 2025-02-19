@@ -13,7 +13,7 @@ export default function TopNavbar() {
         <>
             <div className="flex border border-gray-400 border-x-0 h-15 p-5 text-gray-500">
                 <div className="flex-1">
-                    <h2 className="text-xl">Hello, <span className="text-black font-medium">{user.displayName || user.email}</span></h2>
+                    <h2 className="text-md">Hello, <span className="text-black font-medium">{user.displayName || user.email}</span></h2>
                 </div>
                 <div className="flex justify-end items-center">
                     <Tooltip title="Notications">

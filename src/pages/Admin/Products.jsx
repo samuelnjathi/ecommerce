@@ -4,11 +4,10 @@ import ProductTable from "../../components/Admin/ProductTable";
 export default function Products() {
     return (
         <>
-        <h1>Products Page</h1>
-        <div className="mx-[2%]">
+        <div className="m-7">
+            <h1 className="text-2xl font-semibold mb-4">Products</h1>
             <ProductTable />
         </div>
-        
         </>
     )
 }

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import DashboardOverview from "../../components/Admin/DashboardOverview";
 import SalesChart from "../../components/Admin/SalesChart";
+import ProductChart from "../../components/Admin/ProductChart";
+import CustomerDemographicChart from "../../components/Admin/CustomerDemographicChart";
 
 
 export default function AdminDashboard() {
@@ -15,6 +17,8 @@ export default function AdminDashboard() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <SalesChart />
+                        <ProductChart />
+                        <CustomerDemographicChart />
                     </div>
                 </div>
                 

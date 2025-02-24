@@ -15,7 +15,7 @@ function ProductCard({product}) {
                     <img  className="rounded-md h-[150px] w-full" src={product.image} alt={product.title} />
                     <h3 className="font-bold text-xl py-2" >{product.title}</h3>
                 </div>
-                <h3 className="font-bold text-2xl py-3">$ {product.price}</h3>
+                <h3 className="font-bold text-2xl py-3">$ {product.price.toFixed(2)}</h3>
                 <div className="flex justify-center items-baseline gap-4">
                     <div className="flex-1">
                         <Link to={`/product/${product.id}`} >

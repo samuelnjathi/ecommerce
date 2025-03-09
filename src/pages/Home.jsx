@@ -8,12 +8,12 @@ import Pagination from "../components/Pagination";
 import { ProductContext } from "../context/ProductContext";
 
 function Home() {
-    const { products } = useContext(ProductContext);
+    const { filteredProducts } = useContext(ProductContext);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
     return (
         <div className="px-[5%]">
@@ -27,7 +27,7 @@ function Home() {
                 <ProductList products={currentItems} />
             </div>
             <Pagination 
-                totalItems={products.length}
+                totalItems={filteredProducts.length}
                 itemsPerPage={itemsPerPage}
                 currentPage={currentPage}
                 onPageChange={setCurrentPage} 

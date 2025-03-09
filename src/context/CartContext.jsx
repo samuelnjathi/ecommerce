@@ -4,21 +4,26 @@ import { toast } from "react-toastify";
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cartProducts, setCartProducts] = useState([]);
+    const [cartProducts, setCartProducts] = useState(() => {
+        try {
+            const items = localStorage.getItem("cart");
+            return items ? JSON.parse(items) : []
+        } catch (error) {
+            console.error("Error  reading from local storage", error);
+            return null;
+        }
+    });
     
     useEffect(() => {
-        const items = localStorage.getItem("cart");
-        if (items) {
-            setCartProducts(items);
+        try {
+            localStorage.setItem("cart", JSON.stringify(cartProducts));
+        } catch (error) {
+            console.error("Error writng to local storage",  error)
         }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem("cart", cartProducts);
     }, [cartProducts]);
 
-    const cartCount = cartProducts.reduce((total, item) => total + item.quantity, 0);
-    const cartTotal = cartProducts.reduce((total, item) => total + item.price * item.quantity, 0)
+    const cartCount = cartProducts?.reduce((total, item) => total + item.quantity, 0) || 0;
+    const cartTotal = cartProducts?.reduce((total, item) => total + item.price * item.quantity, 0) || 0;
         
     function addToCart (product) {
         setCartProducts(prevCart => {
@@ -55,7 +60,7 @@ export const CartProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={{ cartProducts, cartTotal, cartCount, addToCart, removeToCart, updateToCart, clearCart}}>
+        <CartContext.Provider value={{ cartProducts, cartCount, cartTotal, addToCart, removeToCart, updateToCart, clearCart}}>
             {children}
         </CartContext.Provider>
     )

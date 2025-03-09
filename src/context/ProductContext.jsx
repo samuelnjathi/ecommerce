@@ -7,7 +7,6 @@ export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-
    
     const fetchProducts = useCallback( async () => {
         try {

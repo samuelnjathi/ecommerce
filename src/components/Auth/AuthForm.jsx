@@ -16,20 +16,20 @@ export default function AuthForm() {
     
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if(user) {
-            navigate("/admin/dashboard");
-        }
-    })
+    // useEffect(() => {
+    //     if(user) {
+    //         navigate("/admin/dashboard");
+    //     }
+    // })
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             if (isRegistered) {
                 await register(email, password);
-                alert("User registered successfully");
+                navigate("/admin/dashboard");
             } else {
                 await login(email, password);
-                alert("User logged in successfully");
+                navigate("/admin/dashboard");
             }
         } catch (error) {
             console.log(error);
@@ -40,7 +40,7 @@ export default function AuthForm() {
     const handleGoogleSignIn = async () => {
         try {
             await googleSignIn();
-            alert("User Signed in successfully");
+            navigate("/admin/dashboard");
         } catch(error) {
             alert(error.message);
             console.log(error);

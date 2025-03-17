@@ -10,7 +10,7 @@ function ProductCard({product}) {
     const { addToCart } = useContext(CartContext)
     return (
         <>
-            <div className="flex flex-col p-4  h-[430px] w-full border border-gray-500 rounded-2xl bg-white shadow-lg">
+            <div className="flex flex-col p-4  h-[430px] w-full rounded-2xl bg-white shadow-lg">
                 <div className="flex-1">
                     <img  className="rounded-md h-[150px] w-full" src={product.image} alt={product.title} />
                     <h3 className="font-bold text-xl py-2" >{product.title}</h3>

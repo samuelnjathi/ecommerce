@@ -4,20 +4,34 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 export default function() {
     return (
-        <><div className="flex flex-col mx-10">
+        <div className="flex flex-col px-10">
             <h1 className="text-2xl font-bold my-10">Checkout</h1>
             <label className="text-xl font-semibold">Shipping Information</label>
             <form className="flex flex-col justify-center py-5" action="" method="post">
                 <div className="flex gap-4">
-                    <div className="flex justify-between gap-3 border border-blue-500 text-blue-500 rounded-md p-4">
-                        <input type="radio" name="delivery" />
-                        <LocalShippingOutlinedIcon />
-                        Deliverly
+                    <div className="flex items-center">
+                        <input type="radio"
+                                name="status"
+                                value="delivery"
+                                id="delivery"
+                                className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                        />
+                        <label htmlFor="delivery"
+                                className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5  font-medium text-gray-600">
+                            Deliverly <HomeOutlinedIcon />  
+                        </label>
                     </div>
-                    <div className="flex justify-between gap-3 border  border-blue-500 text-blue-500 rounded-md p-4">
-                        <input type="radio" name="pick-up" />
-                        <HomeOutlinedIcon />
-                        Pick-Up
+                    <div className="flex items-center">
+                        <input type="radio"
+                                name="status"
+                                value="pickup"
+                                id="delivery"
+                                className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                        />
+                        <label htmlFor="pickup"
+                                className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5  font-medium text-gray-600">
+                            Pick-Up <LocalShippingOutlinedIcon />
+                        </label>
                     </div>
                    
                     
@@ -57,6 +71,6 @@ export default function() {
                 </div>
             </form>
         </div>
-        </>
+        
     )
 }

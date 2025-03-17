@@ -16,7 +16,7 @@ function Home() {
     const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
     return (
-        <div className="px-[5%]">
+        <div className="px-[5%] mt-5">
             <HeaderImage imgSrc={fashion} height={"80vh"} />
             <ProductFilter />
             <div className="flex flex-col items-center justify-center">

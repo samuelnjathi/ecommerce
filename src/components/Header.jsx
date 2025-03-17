@@ -13,7 +13,7 @@ function Header() {
     const { cartCount } = useContext(CartContext);
     return (
         <>
-            <header className="flex items-center justify-between mx-[4%] p-4">
+            <header className="flex items-center justify-between py-4 px-6 bg-white shadow-lg">
                 <Link to="/" >
                     <h1 className="font-mono uppercase text-3xl font-black ">Tush Fashion</h1>
                 </Link>

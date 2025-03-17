@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
     return (
         <>
-        <footer className="mx-[4%] mt-10 ">
+        <footer className="mx-[4%] mt-10">
             <div className="flex justify-between mb-10">
                 <div>
                     <h1 className="text-5xl font-black uppercase my-3">Tush Fashion</h1>

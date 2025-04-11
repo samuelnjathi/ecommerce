@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { CartContext } from "../context/CartContext";
 
-export default function CartList() {
+function CartList() {
     const { cartProducts, clearCart } = useContext(CartContext)
     return (
         <>
@@ -21,3 +21,4 @@ export default function CartList() {
         </>
     )
 }
+export default React.memo(CartList);

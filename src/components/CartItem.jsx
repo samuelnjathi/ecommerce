@@ -21,7 +21,6 @@ function CartItem({cart}) {
                                 e.preventDefault();
                                 updateToCart(cart.id, cart.quantity - 1);
                             } } disabled={cart.quantity <= 1}>-</button>
-                            {/* <input className="text-center w-1/2 placeholder:text-black" type="text" placeholder="1" disabled /> */}
                             <p>{cart.quantity}</p>
                             <button  className="text-center cursor-pointer hover:bg-black hover:text-white" onClick={(e) => {
                                 e.preventDefault()
@@ -38,4 +37,4 @@ function CartItem({cart}) {
         </>
     )
 }
-export default CartItem;
+export default React.memo(CartItem);
